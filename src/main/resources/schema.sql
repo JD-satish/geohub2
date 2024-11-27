@@ -1,18 +1,18 @@
-CREATE TABLE if not exists country(
-    countryId INTEGER PRIMARY KEY AUTO_INCREMENT,
-    countryName TEXT,
-    currency TEXT,
-    population INTEGER,
-    latitude TEXT,
-    longitude TEXT
+CREATE TABLE country(
+    countryId INT PRIMARY KEY AUTO_INCREMENT,
+    countryName varchar(255),
+    currency varchar(255),
+    population INT,
+    latitude varchar(255),
+    longitude varchar(255)
 );
 
-CREATE TABLE if not exists city(
-    cityId INTEGER PRIMARY KEY AUTO_INCREMENT,
-    cityName TEXT,
-    population INTEGER,
-    latitude TEXT,
-    longitude TEXT,
-    countryId INTEGER,
+CREATE TABLE city(
+    cityId INT PRIMARY KEY AUTO_INCREMENT,
+    cityName varchar(255),
+    population INT,
+    latitude varchar(255),
+    longitude varchar(255),
+    countryId INT,
     FOREIGN KEY (countryId) REFERENCES country(countryId)
 );
